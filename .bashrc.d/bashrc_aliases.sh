@@ -10,9 +10,9 @@
 alias rf='. ~/.bash_profile'    # reload .bashrc file
 
 # === ls shortcuts === #
-alias la="ls -AF --color=always"    # List all files in current directory
-alias ll="ls -AlF --color=always"   # List files in current directory in long list format
-alias lal="ls -Al"                  # List all files in current directory in long list format
+alias la="ls -oAF --color=always"    # List all files in current directory
+alias ll="ls -oAlF --color=always"   # List files in current directory in long list format
+alias lal="ls -oAl"                  # List all files in current directory in long list format
 
 # === uni related aliases === #
 alias aa="cd ~/uni/cs712/"
@@ -35,8 +35,10 @@ alias pr="cd ~/uni/cs771/project/ && code . && xdg-open workbook/resources/pampa
 # === personal related aliases === #
 alias cdl="cd ~/.life/"         # Change directory to where I keep notes on life
 alias cdr="cd ~/repo/"          # Change directory to where I keep code
+alias cdrd="cd ~/repo/wlegh/dotfiles/"
 alias ec="xdg-open ~/uni/.cs244/cs244_resources/the_c_programming_language.pdf && cd ~/repo/wlegh/the_c_programming_language && code ."
 alias j="vim ~/.life/logs/2025_journal.txt"     # Open current journal in vim
 alias sj="subl ~/.life/logs/2025_journal.txt"   # Open current journal in sublime text
 alias eb="vim ~/.bashrc"
+alias eba="vim ~/.bashrc.d/bashrc_aliases.sh"
 alias ev="vim ~/.vimrc"
