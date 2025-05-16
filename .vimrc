@@ -7,67 +7,42 @@
 " #  ╚═══╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝#
 " #########################################
 
-set nocompatible
-filetype plugin indent on
-set encoding=utf-8
-set number
-set relativenumber
-set laststatus=2
-set termguicolors
-set scrolloff=0
+"=== GENERAL ==="
+filetype indent on	" file detection, indentation
+filetype plugin on	" file detection, plugin loading
+set encoding=utf-8			" encoding
+set nocompatible			" disable compatibility with vi
+set number					" line numbering
+set relativenumber			" relative line numbering
+set laststatus=2			" ensure status line is always displayed
+set termguicolors			" allow vim to use 'true colors'
+set scrolloff=0				" nr. of lines below/above cursor
 
 "=== COLORS ==="
-"set colorcolumn=81
+"set colorcolumn=81			" color column 81
 "highlight ColorColumn ctermbg=224 guibg=LightRed
-syntax on
+syntax on					" syntax highlighting
 
 "=== FORMATTING ==="
-set tabstop=4
-set shiftwidth=4
+set tabstop=4		" width of <tab>
+set shiftwidth=4	" nr of spaces used for each step of autoindent
 
 "=== REMAPPINGS ==="
+" jj is equivalent to <ESC>
 inoremap jj <ESC>
 
 "=== SEARCH ==="
-set incsearch
-set ignorecase
-set showmatch
-set hlsearch
+set hlsearch	" highlight search results
+set ignorecase	" ignore case during search
+set incsearch	" incrementally highlight search results
+set showmatch	" show matching search results
 
 "=== WILDMENU ==="
-set wildmenu
-set wildmode=list:longest
+set wildmenu				" enable auto completion after <tab>
+set wildmode=list:longest	" behave like bash completion
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.img,*.xlsx
+							" ingore files with above extensions
 
 "=== Vim Air-line and other plugins ==="
-" Plugin directory is optional
-call plug#begin()
+set rtp+=/home/willie/.local/lib/python3.13/site-packages/powerline/bindings/vim
 
-" Declare the list of plugins.
-Plug 'tpope/vim-sensible'
-Plug 'junegunn/seoul256.vim'
-
-" List ends here. Plugins become visible to Vim after this call.
-call plug#end()
-
-
-if exists('*plug#begin') && filereadable(expand("~/.vimrc.plug"))
-    source ~/.vimrc.plug
-endif
-
-if exists(':AirlineToggle')
-    let g:airline_theme='onedark'
-    let g:airline_powerline_fonts = 1
-
-    if !exists('g:airline_symbols')
-        let g:airline_symbols = {}
-    endif
-
-    let g:airline_left_sep = '»'
-    let g:airline_left_alt_sep = ''
-    let g:airline_right_sep = '«'
-    let g:airline_right_alt_sep = ''
-    let g:airline_symbols.branch = ''
-    let g:airline_symbols.readonly = ''
-    let g:airline_symbols.linenr = ''
-endif

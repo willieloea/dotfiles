@@ -14,3 +14,7 @@
 #╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝╚═╝  ╚═╝#
 #####################################################
 fastfetch
+powerline-daemon -q
+POWERLINE_BASH_CONTINUATION=1
+POWERLINE_BASH_SELECT=1
+. /home/willie/.local/lib/python3.13/site-packages/powerline/bindings/bash/powerline.sh
