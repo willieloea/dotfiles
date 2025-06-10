@@ -10,18 +10,18 @@
 "=== GENERAL ==="
 filetype indent on	" file detection, indentation
 filetype plugin on	" file detection, plugin loading
-set encoding=utf-8			" encoding
-set nocompatible			" disable compatibility with vi
-set number					" line numbering
-set relativenumber			" relative line numbering
-set laststatus=2			" ensure status line is always displayed
-set termguicolors			" allow vim to use 'true colors'
-set scrolloff=0				" nr. of lines below/above cursor
+set encoding=utf-8	" encoding
+set nocompatible	" disable compatibility with vi
+set number			" line numbering
+set relativenumber	" relative line numbering
+set laststatus=2	" ensure status line is always displayed
+set termguicolors	" allow vim to use 'true colors'
+set scrolloff=0		" nr. of lines below/above cursor
 
 "=== COLORS ==="
-"set colorcolumn=81			" color column 81
-"highlight ColorColumn ctermbg=224 guibg=LightRed
-syntax on					" syntax highlighting
+set colorcolumn=81	" color column 81
+highlight ColorColumn ctermbg=224 guibg=#80a0ff
+syntax on			" syntax highlighting
 
 "=== FORMATTING ==="
 set tabstop=4		" width of <tab>
@@ -44,5 +44,17 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.img,*.xlsx
 							" ingore files with above extensions
 
 "=== Vim Air-line and other plugins ==="
-set rtp+=/home/willie/.local/lib/python3.13/site-packages/powerline/bindings/vim
+call plug#begin('~/.vim/plugged')
+
+" Add vim-airline and its themes
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+call plug#end()
+
+" Enable the use of powerline fonts
+let g:airline_powerline_fonts = 1
+
+" Set a theme for vim-airline
+let g:airline_theme='powerlineish'
 
